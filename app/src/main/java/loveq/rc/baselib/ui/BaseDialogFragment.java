@@ -14,7 +14,7 @@ import android.view.Window;
  * Description: 去除title,高度wrap_content
  */
 
-public class BaseDialogFragment extends DialogFragment {
+public abstract class BaseDialogFragment extends DialogFragment {
     @Override
     public void onStart() {
         super.onStart();
@@ -27,6 +27,12 @@ public class BaseDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(getLayoutId(), container, false);
+        initView(view);
+        return view;
     }
+
+    protected abstract void initView(View view);
+
+    protected abstract int getLayoutId();
 }
