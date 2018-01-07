@@ -26,6 +26,26 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+
+//
+// 使用方法
+// <transitionSet
+//        xmlns:android="http://schemas.android.com/apk/res/android">
+//
+//        <transition
+//class="io.plaidapp.ui.transitions.Pop"
+//        android:duration="@android:integer/config_shortAnimTime"
+//        android:startDelay="@android:integer/config_shortAnimTime"
+//        android:interpolator="@android:interpolator/fast_out_slow_in">
+//<targets>
+//<target android:targetId="@id/fab" />
+//</targets>
+//</transition>
+//
+//<fade />
+//
+//</transitionSet>
+
 /**
  * A transition that animates the alpha, scale X & Y of a view simultaneously.
  */
