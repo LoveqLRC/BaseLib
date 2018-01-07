@@ -1,4 +1,4 @@
-package loveq.rc.baselib.ui;
+package rc.loveq.baselib.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

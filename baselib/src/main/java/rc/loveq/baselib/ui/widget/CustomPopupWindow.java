@@ -1,4 +1,4 @@
-package loveq.rc.baselib.ui.widget;
+package rc.loveq.baselib.ui.widget;
 
 import android.content.Context;
 import android.graphics.Color;
