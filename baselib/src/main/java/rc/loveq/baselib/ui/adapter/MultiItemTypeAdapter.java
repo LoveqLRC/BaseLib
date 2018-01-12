@@ -7,6 +7,10 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import rc.loveq.baselib.ui.adapter.base.ItemViewDelegate;
+import rc.loveq.baselib.ui.adapter.base.ItemViewDelegateManager;
+import rc.loveq.baselib.ui.adapter.base.ViewHolder;
+
 /**
  * Created by rc on 2018/1/10.
  * Description:

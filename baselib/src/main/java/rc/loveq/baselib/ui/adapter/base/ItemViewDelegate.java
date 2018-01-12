@@ -1,4 +1,4 @@
-package rc.loveq.baselib.ui.adapter;
+package rc.loveq.baselib.ui.adapter.base;
 
 /**
  * Created by rc on 2018/1/10.

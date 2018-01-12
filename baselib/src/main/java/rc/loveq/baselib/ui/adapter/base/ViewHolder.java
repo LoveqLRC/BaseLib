@@ -1,4 +1,4 @@
-package rc.loveq.baselib.ui.adapter;
+package rc.loveq.baselib.ui.adapter.base;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
