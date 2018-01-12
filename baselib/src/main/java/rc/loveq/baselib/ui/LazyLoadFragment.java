@@ -6,7 +6,7 @@ import android.view.View;
 
 /**
  * Created by rc on 2018/1/12.
- * Description:
+ * Description:https://www.jianshu.com/p/7a47907f49c2
  */
 
 public abstract class LazyLoadFragment extends BaseFragment {
