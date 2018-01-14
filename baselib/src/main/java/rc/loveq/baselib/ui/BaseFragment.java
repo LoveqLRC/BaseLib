@@ -1,5 +1,6 @@
 package rc.loveq.baselib.ui;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -14,6 +15,8 @@ import android.view.ViewGroup;
  */
 
 public abstract class BaseFragment extends Fragment {
+    protected BaseActivity mActivity;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,6 +31,19 @@ public abstract class BaseFragment extends Fragment {
         initData();
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (getActivity() instanceof BaseActivity) {
+            mActivity = (BaseActivity) getActivity();
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        mActivity = null;
+        super.onDetach();
+    }
 
     protected abstract @LayoutRes
     int getLayoutId();
@@ -36,7 +52,7 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void initData();
 
-    public static String getFragmentTag() {
-        return BaseFragment.class.getName();
+    public String getFragmentTag() {
+        return this.getClass().getName();
     }
 }
