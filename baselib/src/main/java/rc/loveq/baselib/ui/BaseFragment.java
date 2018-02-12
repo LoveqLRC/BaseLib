@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+import rc.loveq.baselib.R;
 import rc.loveq.baselib.ui.mvp.MvpView;
 import rc.loveq.baselib.utils.CommonUtils;
 
@@ -20,12 +23,14 @@ import rc.loveq.baselib.utils.CommonUtils;
 
 public abstract class BaseFragment extends Fragment implements MvpView {
     protected BaseActivity mActivity;
+    Unbinder unbinder;
     private ProgressDialog mProgressDialog;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(getLayoutId(), container, false);
+        View view = inflater.inflate(R.layout.support_simple_spinner_dropdown_item, container, false);
+        unbinder = ButterKnife.bind(this, view);
         initView(view);
         return view;
     }
@@ -79,5 +84,11 @@ public abstract class BaseFragment extends Fragment implements MvpView {
         if (mActivity != null) {
             mActivity.showMessage(message);
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 }

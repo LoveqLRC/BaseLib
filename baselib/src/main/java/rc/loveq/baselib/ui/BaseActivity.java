@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import butterknife.ButterKnife;
 import rc.loveq.baselib.R;
 import rc.loveq.baselib.ui.mvp.MvpView;
 import rc.loveq.baselib.utils.CommonUtils;
@@ -30,7 +31,9 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        ButterKnife.bind(this);
         initView(savedInstanceState);
+        initTitle();
         initData();
     }
 
@@ -58,12 +61,16 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
         return -1;
     }
 
-
-    protected abstract @LayoutRes
-    int getLayoutId();
-
+    // 设置布局layoutID
+    protected abstract @LayoutRes int getLayoutId();
+    
+    // 初始化界面
     protected abstract void initView(Bundle savedInstanceState);
 
+    // 初始化头部
+    protected abstract void initTitle();
+
+    // 初始化数据
     protected abstract void initData();
 
     protected void setupToolbar() {
